@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Junk In, Junk Out</title>
+<!-- Example project page for FRP 2026 Day 7 (one file: copy it, change the text and the pictures). -->
+<style>
+  :root { --ink: #2e2628; --muted: #867a7c; --accent: #a3283d; --soft: #f6efe9; }
+  body { margin: 0; font-family: "Golos Text", system-ui, sans-serif; color: var(--ink); background: #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 20px; text-align: center; }
+  h1 { font-size: 44px; line-height: 1.1; margin: 0 0 12px; }
+  .authors { color: var(--muted); font-size: 18px; margin-bottom: 22px; }
+  .buttons a { display: inline-block; margin: 0 6px 28px; padding: 10px 22px; border-radius: 999px;
+               background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; }
+  img { max-width: 100%; border-radius: 14px; }
+  .teaser { margin-bottom: 8px; }
+  .caption { color: var(--muted); font-size: 15px; margin-bottom: 36px; }
+  h2 { font-size: 28px; margin: 36px 0 12px; }
+  p { font-size: 18px; line-height: 1.6; text-align: left; }
+  table { margin: 0 auto; border-collapse: collapse; font-size: 18px; }
+  td, th { padding: 10px 18px; border-bottom: 1px solid #e6d8cc; }
+  .win { color: var(--accent); font-weight: 700; }
+  pre { text-align: left; background: var(--soft); padding: 16px; border-radius: 10px; font-size: 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Junk In, Junk Out</h1>
+  <div class="authors">FRP 2026 AI Engineering track · ISSAI, Nazarbayev University</div>
+  <div class="buttons"><a href="#">Paper</a><a href="#">Code</a><a href="#">Demo</a></div>
+  <img class="teaser" src="teaser.png" alt="Sketch: clean pages go into a basket, junk pages into a bin">
+  <div class="caption">We trained the same tiny model on clean and on dirty Kazakh text.</div>
+
+  <h2>Abstract</h2>
+  <p>Language models learn from web text, and web text contains junk. We trained the same tiny language model
+  (10.9 million parameters) twice on Kazakh Wikipedia: once on clean text, and once with half of the text replaced by
+  web junk. The dirty model wrote junk in 37 of 50 texts, the clean model in 0 of 50. The model copies what it reads.</p>
+
+  <h2>Results</h2>
+  <table>
+    <tr><th>Training text</th><th>Loss on clean text</th><th>Texts with junk</th></tr>
+    <tr><td>Clean (baseline)</td><td class="win">0.88</td><td class="win">0 of 50</td></tr>
+    <tr><td>Dirty (50% junk)</td><td>0.94</td><td>37 of 50</td></tr>
+  </table>
+  <h2>Training</h2>
+  <img src="loss.png" alt="Loss curves: the dirty model is worse at every check">
+
+  <h2>Cite</h2>
+  <pre>@misc{frp2026junk,
+  title  = {Junk In, Junk Out: How Web Junk Changes a Tiny Kazakh Language Model},
+  author = {FRP 2026 AI Engineering track},
+  year   = {2026}
+}</pre>
+</main>
+</body>
+</html>
